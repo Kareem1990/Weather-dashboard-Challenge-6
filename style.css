@@ -1,0 +1,102 @@
+body {
+    margin: 5px;
+}
+
+main {
+    display: flex;
+}
+
+section {
+    margin-top: 10px;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.search-panel {
+    width: 25%;
+    margin: 10px 20px 0 10px;
+    padding: 10px 0 10px 10px;
+    background-color: #DCDCDC;
+}
+
+.search-button-panel {
+    margin-left: -52px;
+}
+
+.city-list-box {
+    margin-top: 5px;
+}
+
+.city-name {
+    width: 89%;
+}
+
+.results-panel {
+    width: 75%;
+    padding-bottom: 10px;
+    visibility: hidden;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.current-conditions-panel {
+    border: 1px solid #C0C0C0;
+    border-right: none;
+    padding-left: 10px;
+    padding-bottom: 30px;
+}
+
+.name-block,
+.uv-index-block {
+    display: flex;
+    align-items: center;
+}
+
+#uv-index {
+    margin-left: 5px;
+    padding: 5px 10px;
+}
+
+.forecast-panel {
+    padding-top: 50px;
+}
+
+.container {
+    display: inline;
+}
+
+.card-header,
+.card-body {
+    text-align: center;
+}
+
+.card-header {
+    background-color: #1E90FF;
+    color: white;
+}
+
+.card-body {
+    background-color:#87CEFA;
+}
+
+
+
+/* Classes Added to Elements */
+
+.favorable {
+    background-color: green;
+    color: white;
+}
+
+.moderate {
+    background-color: yellow;
+    color: black;
+}
+
+.severe {
+    background-color: red;
+    color: white;
+}
+
