@@ -53,7 +53,6 @@ function getWeather(data) {
 
     $("#temperature")[0].textContent = "Temperature: " + data.current.temp + " \u2109";
     $("#wind")[0].textContent = "Wind Speed: " + data.current.wind_speed + " MPH";
-    $("#humidity")[0].textContent = "Humidity: " + data.current.humidity + "% ";
 
 
     getFutureWeather(data);
