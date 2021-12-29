@@ -9,10 +9,11 @@ function getCity() {
             response.json().then(function (data) {
 
               //getting geographical coordinates
-      
-                apiURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + data.coord.lat + "&lon=" + data.coord.lon + "&exclude=minutely,hourly&units=imperial&appid=71311474f5b26fb7bbfa0bc1985b90cd";
-                
+                  
                 $("#city-name")[0].textContent = cityName + " (" + moment().format('M/D/YYYY') + ")";
+
+                apiURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + data.coord.lat + "&lon=" + data.coord.lon + "&exclude=minutely,hourly&units=imperial&appid=37e7b26f2f66efa0ec22ead551624da8";
+                
 
                 fetch(apiURL).then(function (response) {
                     if (response.ok) {
@@ -22,6 +23,24 @@ function getCity() {
                     }
                 })
             })
+
+
+            fetch(apiUrl)
+            .then(function(response) {
+              // request was successful
+              if (response.ok) {
+                console.log(response);
+                response.json().then(function(data) {
+                  console.log(data);
+                  displayRepos(data, user);
+                });
+              } else {
+                alert("Error: " + response.statusText);
+              }
+            })
+
+
+
         } else {
             alert("Plese enter a correct city name!");
         }
@@ -33,6 +52,9 @@ function getWeather(data) {
     $(".results-panel").addClass("visible");
 
     $("#temperature")[0].textContent = "Temperature: " + data.current.temp + " \u2109";
+    $("#wind")[0].textContent = "Wind Speed: " + data.current.wind_speed + " MPH";
+    $("#humidity")[0].textContent = "Humidity: " + data.current.humidity + "% ";
+
 
     getFutureWeather(data);
 }
@@ -63,7 +85,7 @@ $("#search-button").on("click", function (event) {
     event.preventDefault();
 
     getCity();
-    $("#city-name")[0].textContent = $(this)[0].textContent + " (" + moment().format('M/D/YYYY') + ")";
     $("#user-form")[0].reset();
+    $("#city-name")[0].textContent = $(this)[0].textContent + " (" + moment().format('M/D/YYYY') + ")";
 })
 
